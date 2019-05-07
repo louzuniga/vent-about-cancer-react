@@ -57,12 +57,4 @@ Venting-posts |
 |                  Create-profile                  |                 Venting-posts                  |
 | ![Create-Profile](/readmeIMG/create-profile.JPG) | ![Venting-posts](/readmeIMG/venting-posts.JPG) |
 
-## Functionality
-
-- As a user, I should be able identify my habits and lifestyle based off of the quiz
-
-- As a user, I should be able to add, delete, update and modify my income, expenses/bills within the logging section
-
-- As a user, I should be able see the results and when I am potentially financially independent
-
 ## Business Objects (Database Structure)
