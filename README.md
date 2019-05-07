@@ -1,5 +1,7 @@
 # ventAboutCancer
 
+> This is the client-side repo. For the server-side repo, please visit: https://github.com/louzuniga/vent-about-cancer-api
+
 > This app is a venting social network regarding cancer stories that is aimed to not only help the user release negative energy and emotion but also assures him/her that he/she is not alone. By writing and reading stories I hope that ventAboutCancer can aide with easing the pain.
 
 > ventAboutCancer allows anyone to express their story, honor victim(s) of cancer by sharing their story, and/or simply personally venting on their profile page. The user also has the ability to vent and read other user's stories about how cancer has affected him/her on the blog/post page.
@@ -18,15 +20,15 @@
 
 ## Screenshots
 
-Landing-Page
+<!-- Landing-Page
 ![Landing-Page](/.../...)
 Login | Sign-up
 :-------------------------:|:-------------------------:
 ![Login](/.../...) | ![Sign-up](/.../...)
 Profile | Create-Profile
 ![Profile](/.../...) | ![Create-Profile](/.../...)
-Venting-posts |  
-![Venting-posts](/.../...)
+Venting-posts |
+![Venting-posts](/.../...) -->
 
 ## User Stories
 
@@ -41,7 +43,7 @@ Venting-posts |
   - Do you have a story to share?
 - Within the user profile page
   - User can honor a victim of cancer and their story
-  - User can have vent right on the profile page
+  - User can vent by posting anything right on their profile page
   - User has the option of deleting their profile
 - User can vent out on the main posts page
 - User can delete anything he/she posts
