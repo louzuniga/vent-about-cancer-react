@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ventAboutCancer
 
-## Available Scripts
+> This app is a venting social network regarding cancer stories that is aimed to not only help the user release negative energy and emotion but also assures him/her that he/she is not alone. By writing and reading stories I hope that ventAboutCancer can aide with easing the pain.
 
-In the project directory, you can run:
+> ventAboutCancer allows anyone to express their story, honor victim(s) of cancer by sharing their story, and/or simply personally venting on their profile page. The user also has the ability to vent and read other user's stories about how cancer has affected him/her on the blog/post page.
 
-### `npm start`
+## Live App
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[](https://)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Technology
 
-### `npm test`
+> #### **Front-End:** HTML, CSS, JavaScript, React, Redux
+>
+> #### **Back-End:** Node, Express, Mocha, Chai, RESTful API, MongoDB, Mongoose
+>
+> #### **Host:** mLab, Heroku
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `npm run build`
+Landing-Page
+![Landing-Page](/.../...)
+Login | Sign-up
+:-------------------------:|:-------------------------:
+![Login](/.../...) | ![Sign-up](/.../...)
+Profile | Create-Profile
+![Profile](/.../...) | ![Create-Profile](/.../...)
+Venting-posts |  
+![Venting-posts](/.../...)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## User Stories
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- User can register for a new account
+- User registers and/or sign in
+  - Username/email
+  - Password
+- User creates a profile page
+  - Name
+  - Are you a survivor?
+  - Location
+  - Do you have a story to share?
+- Within the user profile page
+  - User can honor a victim of cancer and their story
+  - User can have vent right on the profile page
+  - User has the option of deleting their profile
+- User can vent out on the main posts page
+- User can delete anything he/she posts
+- User can read other user's venting posts
+- User can view other user's profile page
+- User can click and un-click on the heart icon on other user's post
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Wireframe
 
-### `npm run eject`
+|                   Landing Page                   |                   Questions                    |
+| :----------------------------------------------: | :--------------------------------------------: |
+|       ![Landing-Page](/readmeIMG/main.JPG)       |       ![Profile](/readmeIMG/profile.JPG)       |
+|                  Create-profile                  |                 Venting-posts                  |
+| ![Create-Profile](/readmeIMG/create-profile.JPG) | ![Venting-posts](/readmeIMG/venting-posts.JPG) |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Functionality
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- As a user, I should be able identify my habits and lifestyle based off of the quiz
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- As a user, I should be able to add, delete, update and modify my income, expenses/bills within the logging section
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- As a user, I should be able see the results and when I am potentially financially independent
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Business Objects (Database Structure)
