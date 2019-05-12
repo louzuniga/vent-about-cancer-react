@@ -2,6 +2,13 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - CI=true
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: KiYdDWoQqHWR+CwyNUFwHX4dHMObgBptXDpgs9u/Y4cL8Y5uxfDU+TKDcHz70b4q21r5wB8SXZixANN47UgSTZP4wZp/Cz+y6HmyvG30+GKYjhljsnPYNeGLwgnRKmQBJ3A1vHschLMkNGtSsHRqvdBhDj8BgJGJhcw92UzSFwAzi43a1eQOMXgcbCqShB+Wxx3GtpcrwY6EDON9mUW1AR+r7TxY7uQf5JXbjU3T4UgqkaoYrqcD7BZrZ2YGpdb8Ehsx/4mOg2/opm3xkclqDZoRiFkL3OgDFR3eO5ebAbHvxJe+GK7oKB2yuNMmnm0/UoHbiMiuyIVn8SaBrFwEZKM3h/2hY7wlkaT3aMWSimMIgCYh4EIrVPfnyV0abZTVWSX+OK1eYE2L9p0EUivDYVFsEfiw9WTa52cWvGQhi7mblyvKIl6GJySN3lgVyVeN24w3vTcO/716564Ym466gFjoAOZ/89BucbD4kuFgty+WSLCwMJmwp8hMghdCgeEkqprMOZInTNNoZIbUrJJ2kPMCWXy2vIJJeODhKYCALprYKYrYSmrP/XpZQLbuqzsuOMdfhrys2S3RpLm2NtDmmmhLkovNpGsH2XlJxEK7SMR1DZESyrW17RF39DJANhSkr68pR43NW9yMu4Kmib9uc6JeKrdvvhmlDDtKcDLuO/8=
+  app: guarded-reef-94256
+  on:
+    repo: louzuniga/vent-about-cancer-react
