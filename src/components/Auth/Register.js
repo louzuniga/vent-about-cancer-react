@@ -1,4 +1,6 @@
 import React, { Fragment, useState } from 'react';
+import axios from 'axios';
+import { users } from '../../actions/index';
 
 const Register = () => {
   const [dataForm, setForm] = useState({
@@ -13,12 +15,31 @@ const Register = () => {
   const onChange = data =>
     setForm({ ...dataForm, [data.target.name]: data.target.value });
 
-  const onSubmit = data => {
+  const onSubmit = async data => {
     data.preventDefault();
     if (password !== samePassword) {
       alert('Password does not match');
     } else {
-      console.log(dataForm);
+      const newUser = {
+        name,
+        email,
+        password
+      };
+      try {
+        const config = {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        };
+
+        const body = JSON.stringify(newUser);
+        console.log(newUser);
+
+        const res = await axios.post('users', body, config);
+        console.log(res.data);
+      } catch (err) {
+        console.error(err.response.data);
+      }
     }
   };
 
