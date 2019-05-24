@@ -13,17 +13,17 @@ const Landing = () => {
           </p>
           <p className='lead'>
             This is a place for cancer victims and/or their loved ones who just
-            needs to let it out. Create a profile, customize your profile with
-            vent sessions and aweseom stories, and freely post anything your
+            needs to vent it out. Create a profile, customize your profile with
+            vent sessions and awesome stories and/or freely post anything you
             desire on the public blog post. Sometimes it helps to let it all out
             and knowing that there are other people going through the same
             emotional toll.{' '}
           </p>
           <div className='buttons'>
-            <Link to='/register' className='btn btn-primary'>
+            <Link to='/signup' className='btn btn-primary'>
               Sign Up
             </Link>
-            <Link to='/login' className='btn btn-light'>
+            <Link to='/login' className='btn btn-primary'>
               Login
             </Link>
           </div>

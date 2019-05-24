@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import axios from 'axios';
 import { users } from '../../actions/index';
 
-const Register = () => {
+const Signup = () => {
   const [dataForm, setForm] = useState({
     name: '',
     email: '',
@@ -46,9 +46,7 @@ const Register = () => {
   return (
     <Fragment>
       <h1 className='large text-primary'>Sign Up</h1>
-      <p className='lead'>
-        <i className='fas fa-user' /> Create Your Account
-      </p>
+      <p className='lead'>Create Your Account</p>
       <form className='form' onSubmit={data => onSubmit(data)}>
         <div className='form-group'>
           <input
@@ -96,7 +94,7 @@ const Register = () => {
             required
           />
         </div>
-        <input type='submit' className='btn btn-primary' value='Register' />
+        <input type='submit' className='btn btn-primary' value='Signup' />
       </form>
       <p className='my-1'>
         Already have an account? <a href='login.html'>Sign In</a>
@@ -105,4 +103,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Signup;
