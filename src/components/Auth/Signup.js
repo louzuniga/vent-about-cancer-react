@@ -1,7 +1,13 @@
 import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+// need connect to work with redux
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import { setAlert } from '../../actions/alert';
+import { signup } from '../../actions/auth';
+import PropTypes from 'prop-types';
 
-const Signup = () => {
+// destructure props eg. setAlert properties are pulled from ./actions/alert.js
+const Signup = ({ setAlert, signup, isAuthenticated }) => {
   const [dataForm, setForm] = useState({
     name: '',
     email: '',
@@ -17,35 +23,16 @@ const Signup = () => {
   const onSubmit = async data => {
     data.preventDefault();
     if (password !== samePassword) {
-      alert('Password does not match');
+      // called setAlerts that was pulled from Signup props and sent it a message "Password..." and gave it an alert type danger
+      setAlert('Passwords does not match', 'danger');
     } else {
-      console.log('Success');
-      // const newUser = {
-      //   name,
-      //   email,
-      //   password
-      // };
-      // try {
-      //   const config = {
-      //     headers: {
-      //       'Content-Type': 'application/json'
-      //     }
-      //   };
-
-      //   const body = JSON.stringify(newUser);
-      //   console.log(newUser);
-
-      //   const res = await axios.post(
-      //     'http://localhost:5000/api/users',
-      //     body,
-      //     config
-      //   );
-      //   console.log(res.data);
-      // } catch (err) {
-      //   console.error(err.response.data);
-      // }
+      signup({ name, email, password });
     }
   };
+
+  if (isAuthenticated) {
+    return <Redirect to='/dashboard' />;
+  }
 
   return (
     <Fragment>
@@ -103,4 +90,17 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+Signup.protoTypes = {
+  setAlert: PropTypes.func.isRequired,
+  signup: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
+};
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(
+  mapStateToProps,
+  { setAlert, signup }
+)(Signup);
