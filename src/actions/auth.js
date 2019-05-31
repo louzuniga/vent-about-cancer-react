@@ -7,7 +7,8 @@ import {
   USER_AUTH,
   AUTH_ERROR,
   LOGIN_FAIL,
-  LOGIN_SUCCESS
+  LOGIN_SUCCESS,
+  LOGOUT
 } from './constsants';
 
 // Authenticated User
@@ -110,4 +111,9 @@ export const login = (email, password) => async dispatch => {
       type: LOGIN_FAIL
     });
   }
+};
+
+// Logout and clear data
+export const logout = () => dispatch => {
+  dispatch({ type: LOGOUT });
 };
