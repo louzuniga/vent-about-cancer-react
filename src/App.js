@@ -1,11 +1,14 @@
 // React Hooks
 import React, { Fragment, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Nav from './components/Nav';
 import Landing from './components/Landing';
 import Login from './components/Auth/Login';
 import Signup from './components/Auth/Signup';
 import Alert from './components/Alert';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Dashboard from './components/dashboard/Dashboard';
+import PrivateRoute from './components/routing/PrivateRoute';
+import CreateProfile from './components/profile-data/CreateProfile';
 
 // Combines react and redux toget by using Provider
 import { Provider } from 'react-redux';
@@ -35,6 +38,12 @@ const App = () => {
             <Switch>
               <Route exact path='/login' component={Login} />
               <Route exact path='/signup' component={Signup} />
+              <PrivateRoute exact path='/dashboard' component={Dashboard} />
+              <PrivateRoute
+                exact
+                path='/create-profile'
+                component={CreateProfile}
+              />
             </Switch>
           </section>
         </Fragment>
