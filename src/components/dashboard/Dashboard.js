@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Pinwheel from '../pinwheel/Pinwheel';
 import { getCurrentProfile } from '../../actions/profile';
+import DashboardActions from './DashboardActions';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -12,7 +13,7 @@ const Dashboard = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
 
   return loading && profile === null ? (
     <Pinwheel />
@@ -25,7 +26,9 @@ const Dashboard = ({
         vision." -Dalai Lama
       </p>
       {profile !== null ? (
-        <Fragment>yes</Fragment>
+        <Fragment>
+          <DashboardActions />
+        </Fragment>
       ) : (
         <Fragment>
           <p>Please set up your profile</p>

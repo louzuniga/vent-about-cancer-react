@@ -1,11 +1,16 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // withRouter is for using history
 import { Link, withRouter } from 'react-router-dom';
-import { createProfile } from '../../actions/profile';
+import { createProfile, getCurrentProfile } from '../../actions/profile';
 
-const CreateProfile = ({ createProfile, history }) => {
+const EditProfile = ({
+  profile: { profile, loading },
+  createProfile,
+  getCurrentProfile,
+  history
+}) => {
   const [formData, setData] = useState({
     location: '',
     status: '',
@@ -17,6 +22,20 @@ const CreateProfile = ({ createProfile, history }) => {
   });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+
+  useEffect(() => {
+    getCurrentProfile();
+
+    setData({
+      location: loading || !profile.location ? '' : profile.location,
+      status: loading || !profile.status ? '' : profile.status,
+      bio: loading || !profile.bio ? '' : profile.bio,
+      twitter: loading || !profile.social ? '' : profile.social.twitter,
+      facebook: loading || !profile.social ? '' : profile.social.facebook,
+      linkedin: loading || !profile.social ? '' : profile.social.linkedin,
+      instagram: loading || !profile.social ? '' : profile.social.instagram
+    });
+  }, [loading, getCurrentProfile]);
 
   // destructure to avoid having to eg. formData.location etc...
   const {
@@ -34,15 +53,15 @@ const CreateProfile = ({ createProfile, history }) => {
 
   const onSubmit = e => {
     e.preventDefault();
-    createProfile(formData, history);
+    createProfile(formData, history, true);
   };
 
   return (
     <Fragment>
       <h1 className='large text-primary'>Let's Create Your Profile</h1>
       <p className='lead'>
-        What do you want people to know about you? Provide as much or as little
-        information.
+        <i className='fas fa-user' /> What do you want peeople to know about
+        you? Express yourself!
       </p>
       <small>* = required field</small>
       <form className='form' onSubmit={e => onSubmit(e)}>
@@ -54,7 +73,9 @@ const CreateProfile = ({ createProfile, history }) => {
             value={location}
             onChange={e => onChange(e)}
           />
-          <p className='lead'>City & state suggested (eg. Portland, OR)</p>
+          <small className='form-text'>
+            City & state suggested (eg. Portland, OR)
+          </small>
         </div>
 
         <div className='form-group'>
@@ -68,17 +89,16 @@ const CreateProfile = ({ createProfile, history }) => {
             <option value='Caregiver'>Caregiver</option>
             <option value='Other'>Other</option>
           </select>
-          <p className='lead'>Please Select</p>
         </div>
 
         <div className='form-group'>
+          <small className='form-text'>What's your story?</small>
           <textarea
             placeholder='A short bio of yourself'
             name='bio'
             value={bio}
             onChange={e => onChange(e)}
           />
-          <p className='lead'>What's your story?</p>
         </div>
 
         <div className='my-2'>
@@ -149,11 +169,17 @@ const CreateProfile = ({ createProfile, history }) => {
   );
 };
 
-CreateProfile.propTypes = {
-  createProfile: PropTypes.func.isRequired
+EditProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
+  profile: PropTypes.object.isRequired
 };
 
+const mapStateToProps = state => ({
+  profile: state.profile
+});
+
 export default connect(
-  null,
-  { createProfile }
-)(withRouter(CreateProfile));
+  mapStateToProps,
+  { createProfile, getCurrentProfile }
+)(withRouter(EditProfile));
