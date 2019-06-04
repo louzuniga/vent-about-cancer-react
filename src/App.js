@@ -10,8 +10,10 @@ import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/routing/PrivateRoute';
 import CreateProfile from './components/profile-data/CreateProfile';
 import EditProfile from './components/profile-data/EditProfile';
+import AddVictim from './components/profile-data/AddVictim';
+import AddVent from './components/profile-data/AddVent';
 
-// Combines react and redux toget by using Provider
+// Combines react and redux together by using Provider
 import { Provider } from 'react-redux';
 import store from './store';
 import { userAuth } from './actions/auth';
@@ -27,7 +29,7 @@ const App = () => {
   useEffect(() => {
     store.dispatch(userAuth());
   }, []);
-  // should inlcue [] with useEffect if we only want it to run once
+  // should include [] with useEffect if we only want it to run once
   return (
     <Provider store={store}>
       <Router>
@@ -50,6 +52,8 @@ const App = () => {
                 path='/edit-profile'
                 component={EditProfile}
               />
+              <PrivateRoute exact path='/honor-victim' component={AddVictim} />
+              <PrivateRoute exact path='/just-vent' component={AddVent} />
             </Switch>
           </section>
         </Fragment>

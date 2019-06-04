@@ -60,8 +60,8 @@ const EditProfile = ({
     <Fragment>
       <h1 className='large text-primary'>Let's Create Your Profile</h1>
       <p className='lead'>
-        <i className='fas fa-user' /> What do you want peeople to know about
-        you? Express yourself!
+        <i className='fas fa-user' /> What do you want people to know about you?
+        Express yourself!
       </p>
       <small>* = required field</small>
       <form className='form' onSubmit={e => onSubmit(e)}>
@@ -89,16 +89,17 @@ const EditProfile = ({
             <option value='Caregiver'>Caregiver</option>
             <option value='Other'>Other</option>
           </select>
+          <small className='form-text'>Please Select One</small>
         </div>
 
         <div className='form-group'>
-          <small className='form-text'>What's your story?</small>
           <textarea
             placeholder='A short bio of yourself'
             name='bio'
             value={bio}
             onChange={e => onChange(e)}
           />
+          <small className='form-text'>What's your story?</small>
         </div>
 
         <div className='my-2'>
@@ -109,7 +110,6 @@ const EditProfile = ({
           >
             Add Social Network Links
           </button>
-          <span>Completely Optional</span>
         </div>
 
         {displaySocialInputs && (

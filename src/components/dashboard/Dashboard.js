@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import Pinwheel from '../pinwheel/Pinwheel';
 import { getCurrentProfile } from '../../actions/profile';
 import DashboardActions from './DashboardActions';
+import Victim from './Victim';
+import Vent from './Vent';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -28,6 +30,7 @@ const Dashboard = ({
       {profile !== null ? (
         <Fragment>
           <DashboardActions />
+          <Victim victim={profile.victim} />
         </Fragment>
       ) : (
         <Fragment>
