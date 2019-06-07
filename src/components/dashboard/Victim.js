@@ -1,14 +1,20 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Moment from 'react-moment';
+import { deleteVictim } from '../../actions/profile';
 
-const Victim = ({ victim }) => {
+const Victim = ({ victim, deleteVictim }) => {
   const victims = victim.map(vic => (
     <tr key={vic._id}>
-      <td>vic.name</td>
+      <td>{vic.name}</td>
+      <td>{vic.dates}</td>
+      <td>{vic.relationship}</td>
+      <td>{vic.story}</td>
       <td>
-        <button className='' btn btn-danger>
+        <button
+          onClick={() => deleteVictim(vic._id)}
+          className='btn btn-danger'
+        >
           Delete
         </button>
       </td>
@@ -35,7 +41,11 @@ const Victim = ({ victim }) => {
 };
 
 Victim.propTypes = {
-  victim: PropTypes.array.isRequired
+  victim: PropTypes.array.isRequired,
+  deleteVictim: PropTypes.func.isRequired
 };
 
-export default Victim;
+export default connect(
+  null,
+  { deleteVictim }
+)(Victim);
