@@ -32,11 +32,12 @@ const Dashboard = ({
         <Fragment>
           <DashboardActions />
           <Victim victim={profile.victim} />
-          {/* <Vent vent={profile.vent} /> */}
+          <Vent vent={profile.vent} />
 
           <div className='my-2'>
             <button className='btn btn-danger' onClick={() => deleteAccount()}>
-              <i className='fas fa-user-minus' />Delete My Account
+              <i className='fas fa-user-minus' />
+              Delete My Account
             </button>
           </div>
         </Fragment>

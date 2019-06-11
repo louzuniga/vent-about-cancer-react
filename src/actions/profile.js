@@ -203,6 +203,27 @@ export const deleteVictim = id => async dispatch => {
   }
 };
 
+// Delete a vent
+export const deleteVent = id => async dispatch => {
+  try {
+    const res = await axios.delete(
+      `http://localhost:5000/api/profile/vent/${id}`
+    );
+
+    dispatch({
+      type: UPDATE_PROFILE,
+      payload: res.data
+    });
+
+    dispatch(setAlert('Vent Deleted', 'success'));
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+};
+
 // Delete aaccount and profile
 export const deleteAccount = () => async dispatch => {
   if (window.confirm('You are attempting to permantely delete your account!')) {
