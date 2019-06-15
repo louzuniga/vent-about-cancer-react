@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { setAlert } from './alert';
+import API_ORIGIN from '../config';
 
 import {
   GET_PROFILE,
@@ -13,7 +14,7 @@ import {
 // Get current users profile
 export const getCurrentProfile = () => async dispatch => {
   try {
-    const res = await axios.get('http://localhost:5000/api/profile/mine');
+    const res = await axios.get(`${API_ORIGIN}/api/profile/mine`);
 
     dispatch({
       type: GET_PROFILE,
@@ -30,9 +31,7 @@ export const getCurrentProfile = () => async dispatch => {
 // Get current users profile by ID
 export const getProfileById = userId => async dispatch => {
   try {
-    const res = await axios.get(
-      `http://localhost:5000/api/profile/user/${userId}`
-    );
+    const res = await axios.get(`${API_ORIGIN}/api/profile/user/${userId}`);
 
     dispatch({
       type: GET_PROFILE,
@@ -51,7 +50,7 @@ export const getProfiles = () => async dispatch => {
   dispatch({ type: CLEAR_PROFILE });
 
   try {
-    const res = await axios.get('http://localhost:5000/api/profile');
+    const res = await axios.get(`${API_ORIGIN}/api/profile`);
 
     dispatch({
       type: GET_PROFILES,
@@ -78,11 +77,7 @@ export const createProfile = (
       }
     };
 
-    const res = await axios.post(
-      'http://localhost:5000/api/profile',
-      formData,
-      config
-    );
+    const res = await axios.post(`${API_ORIGIN}/api/profile`, formData, config);
 
     dispatch({
       type: GET_PROFILE,
@@ -118,7 +113,7 @@ export const addVictim = (formData, history) => async dispatch => {
     };
 
     const res = await axios.put(
-      'http://localhost:5000/api/profile/victim',
+      `${API_ORIGIN}/api/profile/victim`,
       formData,
       config
     );
@@ -155,7 +150,7 @@ export const addVent = (formData, history) => async dispatch => {
     };
 
     const res = await axios.put(
-      'http://localhost:5000/api/profile/vent',
+      `${API_ORIGIN}/api/profile/vent`,
       formData,
       config
     );
@@ -185,9 +180,7 @@ export const addVent = (formData, history) => async dispatch => {
 // Delete a victim
 export const deleteVictim = id => async dispatch => {
   try {
-    const res = await axios.delete(
-      `http://localhost:5000/api/profile/victim/${id}`
-    );
+    const res = await axios.delete(`${API_ORIGIN}/api/profile/victim/${id}`);
 
     dispatch({
       type: UPDATE_PROFILE,
@@ -206,9 +199,7 @@ export const deleteVictim = id => async dispatch => {
 // Delete a vent
 export const deleteVent = id => async dispatch => {
   try {
-    const res = await axios.delete(
-      `http://localhost:5000/api/profile/vent/${id}`
-    );
+    const res = await axios.delete(`${API_ORIGIN}/api/profile/vent/${id}`);
 
     dispatch({
       type: UPDATE_PROFILE,
@@ -228,7 +219,7 @@ export const deleteVent = id => async dispatch => {
 export const deleteAccount = () => async dispatch => {
   if (window.confirm('You are attempting to permantely delete your account!')) {
     try {
-      axios.delete('http://localhost:5000/api/profile');
+      axios.delete(`${API_ORIGIN}/api/profile`);
 
       dispatch({ type: CLEAR_PROFILE });
       dispatch({ type: DELETE_ACCOUNT });

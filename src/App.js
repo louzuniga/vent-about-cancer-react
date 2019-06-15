@@ -10,6 +10,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/routing/PrivateRoute';
 import CreateProfile from './components/profile-data/CreateProfile';
 import Profiles from './components/profiles/Profiles';
+import Profile from './components/profile/Profile';
 import EditProfile from './components/profile-data/EditProfile';
 import AddVictim from './components/profile-data/AddVictim';
 import AddVent from './components/profile-data/AddVent';
@@ -37,7 +38,7 @@ const App = () => {
         <Fragment>
           <Nav />
           <Route exact path='/' component={Landing} />
-          <Route exact path='/profiles' component={Profiles} />
+
           <section className='container'>
             <Alert />
             <Switch>
@@ -56,6 +57,8 @@ const App = () => {
               />
               <PrivateRoute exact path='/honor-victim' component={AddVictim} />
               <PrivateRoute exact path='/just-vent' component={AddVent} />
+              <PrivateRoute exact path='/profiles' component={Profiles} />
+              <PrivateRoute exact path='/profile/:id' component={Profile} />
             </Switch>
           </section>
         </Fragment>
