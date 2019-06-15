@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { setAlert } from './alert';
-import API_ORIGIN from '../config';
+import { API_ORIGIN } from '../config';
 
 import {
   GET_PROFILE,

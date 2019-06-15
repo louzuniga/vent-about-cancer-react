@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { setAlert } from './alert';
-import API_ORIGIN from '../config';
+import { API_ORIGIN } from '../config';
 import storeAuthToken from '../utils/storeAuthToken';
 import {
   REGISTER_SUCCESS,
@@ -21,6 +21,7 @@ export const userAuth = () => async dispatch => {
 
   try {
     const res = await axios.get(`${API_ORIGIN}/api/auth`);
+    console.log(res);
 
     dispatch({
       type: USER_AUTH,
@@ -84,6 +85,7 @@ export const login = (email, password) => async dispatch => {
   try {
     // post to back end using axios
     const res = await axios.post(`${API_ORIGIN}/api/auth`, body, config);
+    console.log(res);
 
     // if post is successful
     dispatch({
