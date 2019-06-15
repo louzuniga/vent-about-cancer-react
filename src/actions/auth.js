@@ -21,7 +21,6 @@ export const userAuth = () => async dispatch => {
 
   try {
     const res = await axios.get(`${API_ORIGIN}/api/auth`);
-    console.log(res);
 
     dispatch({
       type: USER_AUTH,
@@ -85,7 +84,6 @@ export const login = (email, password) => async dispatch => {
   try {
     // post to back end using axios
     const res = await axios.post(`${API_ORIGIN}/api/auth`, body, config);
-    console.log(res);
 
     // if post is successful
     dispatch({

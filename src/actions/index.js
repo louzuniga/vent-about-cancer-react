@@ -1,4 +1,3 @@
-// import jwtDecode from "jwt-decode";
 import { API_ORIGIN } from '../config';
 
 // Get list of users who logged in
