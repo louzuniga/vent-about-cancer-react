@@ -2,6 +2,9 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import ProfileTop from './ProfileTop';
+import ProfileAbout from './ProfileAbout';
+import ProfileVictim from './ProfileVictim';
 import Pinwheel from '../pinwheel/Pinwheel';
 import { getProfileById } from '../../actions/profile';
 
@@ -13,7 +16,7 @@ const Profile = ({
 }) => {
   useEffect(() => {
     getProfileById(match.params.id);
-  }, [getProfileById]);
+  }, [getProfileById, match.params.id]);
 
   return (
     <Fragment>
@@ -31,6 +34,22 @@ const Profile = ({
                 Edit Profile
               </Link>
             )}
+          <div className='profile-grid my-1'>
+            <ProfileTop profile={profile} />
+            <ProfileAbout profile={profile} />
+            <div className='profile-exp bg-white p-2'>
+              <h2 className='text-primary'>Victim Honored</h2>
+              {profile.victim.lenght > 0 ? (
+                <Fragment>
+                  {profile.victim.map(victim => (
+                    <ProfileVictim key={victim._id} victim={victim} />
+                  ))}
+                </Fragment>
+              ) : (
+                <h4>No Victims Mentioned</h4>
+              )}
+            </div>
+          </div>
         </Fragment>
       )}
     </Fragment>

@@ -22,7 +22,7 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
         <Link to='/profiles'>
           <i className='fas fa-user' />
           {''}
-          <span className='hide-sm'> Profile</span>
+          <span className='hide-sm'> Community Profiles</span>
         </Link>
       </li>
       <li>
