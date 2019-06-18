@@ -4,16 +4,16 @@ import Moment from 'react-moment';
 
 const ProfileVictim = ({ victim: { name, dates, relationship, story } }) => (
   <div>
-    <h3 className='text-dark'>{name}</h3>
+    <h2 className='text-dark'>{name}</h2>
     <p>
+      <strong>R.I.P: </strong>
       <Moment format='MM/DD/YYYY'>{dates}</Moment>
     </p>
     <p>
       <strong>Relationship: </strong> {relationship}
     </p>
     <p>
-      <strong>Story</strong>
-      {story}
+      <strong>Story: </strong> {story}
     </p>
   </div>
 );

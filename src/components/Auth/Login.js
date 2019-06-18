@@ -52,6 +52,15 @@ const Login = ({ login, isAuthenticated }) => {
             required
           />
         </div>
+        <p>
+          {' '}
+          DEMO ACCOUNT
+          <br />
+          email: <strong>demo@gmail.com</strong>
+          <br />
+          password: <strong>12345678</strong>
+        </p>
+        <br />
         <input type='submit' className='btn btn-primary' value='Login' />
       </form>
       <p className='my-1'>

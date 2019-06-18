@@ -39,14 +39,14 @@ const Profile = ({
             <ProfileAbout profile={profile} />
             <div className='profile-exp bg-white p-2'>
               <h2 className='text-primary'>Victim Honored</h2>
-              {profile.victim.lenght > 0 ? (
+              {profile.victim.length > 0 ? (
                 <Fragment>
                   {profile.victim.map(victim => (
                     <ProfileVictim key={victim._id} victim={victim} />
                   ))}
                 </Fragment>
               ) : (
-                <h4>No Victims Mentioned</h4>
+                <h4>No victims mentioned yet...</h4>
               )}
             </div>
           </div>
