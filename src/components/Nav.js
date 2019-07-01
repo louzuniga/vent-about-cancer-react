@@ -20,14 +20,14 @@ const Nav = ({ auth: { isAuthenticated, loading }, logout }) => {
     <ul>
       <li>
         <Link to='/profiles'>
-          <i className='fas fa-user' />
+          <i className='fas fa-user-friends' />
           {''}
           <span className='hide-sm'> Community Profiles</span>
         </Link>
       </li>
       <li>
         <Link to='/posts'>
-          <i className='fas fa-user' />
+          <i className='fas fa-users' />
           {''}
           <span className='hide-sm'> Community Vents</span>
         </Link>

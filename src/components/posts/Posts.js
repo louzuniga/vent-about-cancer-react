@@ -3,13 +3,30 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getPosts } from '../../actions/post';
 import Pinwheel from '../pinwheel/Pinwheel';
+import PostsItem from './PostsItem';
 
 const Posts = ({ getPosts, post: { posts, loading } }) => {
   useEffect(() => {
     getPosts();
   }, [getPosts]);
 
-  return loading ? <Pinwheel /> : <Fragment>Test</Fragment>;
+  return loading ? (
+    <Pinwheel />
+  ) : (
+    <Fragment>
+      <h1 className='large text-primary'>Community Vents</h1>
+      <p className='posts'>
+        <i className='fas fa-users' /> Welcome to the support community! Please
+        be kind...
+      </p>
+      {/* Post Form  */}
+      <div className='posts'>
+        {posts.map(post => (
+          <PostsItem key={post._id} post={post} />
+        ))}
+      </div>
+    </Fragment>
+  );
 };
 
 Posts.propTypes = {

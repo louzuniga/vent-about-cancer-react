@@ -17,11 +17,11 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
       ) : (
         <Fragment>
           <h1 className='large text-primary'>Your Community</h1>
-          <p className='lead'>
-            <i className=''>
-              Co-mingle with your support community! Please be kind...
-            </i>
+          <p>
+            <i className='fas fa-user-friends' /> Co-mingle with your support
+            community!
           </p>
+          <br />
           <div className='profiles'>
             {profiles && profiles.length > 0 ? (
               profiles.map(profile => (
