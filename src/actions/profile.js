@@ -216,6 +216,7 @@ export const deleteVent = id => async dispatch => {
 };
 
 // Delete aaccount and profile
+
 export const deleteAccount = () => async dispatch => {
   if (window.confirm('You are attempting to permantely delete your account!')) {
     try {

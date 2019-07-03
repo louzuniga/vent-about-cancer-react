@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 
 const ProfileVictim = ({ victim: { name, dates, relationship, story } }) => (
-  <div>
+  <div className='profile-about bg-light p-2'>
     <h2 className='text-dark'>{name}</h2>
     <p>
       <strong>R.I.P: </strong>
