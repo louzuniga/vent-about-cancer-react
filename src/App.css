@@ -143,11 +143,11 @@ img {
   opacity: 0.9;
   background: var(--light-color);
   color: #333;
+  position: fixed;
 }
 
 .btn-primary,
 .bg-primary,
-.badge-primary,
 .alert-primary {
   background: var(--primary-color);
   color: #fff;
@@ -155,7 +155,6 @@ img {
 
 .btn-light,
 .bg-light,
-.badge-light,
 .alert-light {
   background: var(--light-color);
   color: #333;
@@ -163,7 +162,6 @@ img {
 
 .btn-dark,
 .bg-dark,
-.badge-dark,
 .alert-dark {
   background: var(--dark-color);
   color: #fff;
@@ -171,7 +169,6 @@ img {
 
 .btn-danger,
 .bg-danger,
-.badge-danger,
 .alert-danger {
   background: var(--danger-color);
   color: #fff;
@@ -179,7 +176,6 @@ img {
 
 .btn-success,
 .bg-success,
-.badge-success,
 .alert-success {
   background: var(--success-color);
   color: #fff;
@@ -187,7 +183,6 @@ img {
 
 .btn-white,
 .bg-white,
-.badge-white,
 .alert-white {
   background: #fff;
   color: #333;
@@ -195,13 +190,12 @@ img {
 }
 
 .btn:hover {
-  /* opacity: 0.8; */
+  opacity: 0.6;
   background-color: #fff;
   color: var(--primary-color);
 }
 
-.bg-light,
-.badge-light {
+.bg-light {
   border: #ccc solid 1px;
 }
 
@@ -292,14 +286,13 @@ button {
 /* Navbar */
 .navbar {
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   align-items: center;
   padding: 0.7rem 2rem;
   position: fixed;
   z-index: 1;
   width: 100%;
   top: 0;
-  /* border-bottom: solid 1px var(--primary-color); */
   opacity: 0.9;
 }
 
@@ -316,10 +309,6 @@ button {
 .navbar a:hover {
   background-color: #fff;
   color: var(--primary-color);
-}
-
-.navbar .welcome span {
-  margin-right: 0.6rem;
 }
 
 /* Landing Page */

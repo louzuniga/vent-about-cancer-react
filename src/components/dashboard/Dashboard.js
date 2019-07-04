@@ -33,6 +33,7 @@ const Dashboard = ({
         <Fragment>
           <DashboardActions />
           <Victim victim={profile.victim} />
+          <br />
           <Vent vent={profile.vent} />
 
           <div className='my-2'>

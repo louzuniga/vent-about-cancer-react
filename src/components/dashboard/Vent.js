@@ -19,7 +19,7 @@ const Vent = ({ vent, deleteVent }) => {
 
   return (
     <Fragment>
-      <h2 className='my-2'>Just Vent It!</h2>
+      <h2 className='large light-color'>Just Vent It!</h2>
       <table className='table'>
         <thead>
           <tr>
