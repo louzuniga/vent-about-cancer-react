@@ -35,7 +35,7 @@ const EditProfile = ({
       linkedin: loading || !profile.social ? '' : profile.social.linkedin,
       instagram: loading || !profile.social ? '' : profile.social.instagram
     });
-  }, [loading, getCurrentProfile]);
+  }, [getCurrentProfile, loading]);
 
   // destructure to avoid having to eg. formData.location etc...
   const {
