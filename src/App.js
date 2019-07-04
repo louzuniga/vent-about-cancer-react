@@ -39,11 +39,11 @@ const App = () => {
       <Router>
         <Fragment>
           <Nav />
-          <Route exact path='/' component={Landing} />
 
-          <section className='container'>
-            <Alert />
-            <Switch>
+          <Alert />
+          <Switch>
+            <Route exact path='/' component={Landing} />
+            <section className='container'>
               <Route exact path='/login' component={Login} />
               <Route exact path='/signup' component={Signup} />
               <PrivateRoute exact path='/dashboard' component={Dashboard} />
@@ -63,8 +63,8 @@ const App = () => {
               <PrivateRoute exact path='/profile/:id' component={Profile} />
               <PrivateRoute exact path='/posts' component={Posts} />
               <PrivateRoute exact path='/posts/:id' component={Post} />
-            </Switch>
-          </section>
+            </section>
+          </Switch>
         </Fragment>
       </Router>
     </Provider>

@@ -7,10 +7,10 @@ const Victim = ({ victim, deleteVictim }) => {
   const victims = victim.map(vic => (
     <tr key={vic._id}>
       <td>{vic.name}</td>
-      <td>{vic.dates}</td>
-      <td>{vic.relationship}</td>
+      <td className='hide-sm'>{vic.dates}</td>
+      <td className='hide-sm'>{vic.relationship}</td>
       <td>{vic.story}</td>
-      <td>
+      <td className='hide-sm'>
         <button
           onClick={() => deleteVictim(vic._id)}
           className='btn btn-danger'
@@ -28,10 +28,10 @@ const Victim = ({ victim, deleteVictim }) => {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Dates</th>
-            <th>Relationship</th>
+            <th className='hide-sm'>Dates</th>
+            <th className='hide-sm'>Relationship</th>
             <th>Story</th>
-            <th />
+            <th className='hide-sm' />
           </tr>
         </thead>
         <tbody>{victims}</tbody>

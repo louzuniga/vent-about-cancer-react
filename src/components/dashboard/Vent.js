@@ -7,9 +7,9 @@ const Vent = ({ vent, deleteVent }) => {
   const vents = vent.map(ven => (
     <tr key={ven._id}>
       <td>{ven.title}</td>
-      <td>{ven.date}</td>
+      <td className='hide-sm'>{ven.date}</td>
       <td>{ven.vent}</td>
-      <td>
+      <td className='hide-sm'>
         <button onClick={() => deleteVent(ven._id)} className='btn btn-danger'>
           Delete
         </button>
@@ -24,9 +24,9 @@ const Vent = ({ vent, deleteVent }) => {
         <thead>
           <tr>
             <th>Title</th>
-            <th>Date</th>
+            <th className='hide-sm'>Date</th>
             <th>Freely Use Your Words</th>
-            <th />
+            <th className='hide-sm' />
           </tr>
         </thead>
         <tbody>{vents}</tbody>
