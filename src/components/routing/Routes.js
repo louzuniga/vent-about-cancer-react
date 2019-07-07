@@ -13,6 +13,7 @@ import AddVictim from '../profile-data/AddVictim';
 import AddVent from '../profile-data/AddVent';
 import Posts from '../posts/Posts';
 import Post from '../post/Post';
+// import Copyright from '../../components/Copyright';
 
 const Routes = () => {
   return (
