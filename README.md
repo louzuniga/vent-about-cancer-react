@@ -8,7 +8,7 @@
 
 ## Live App
 
-[](https://)
+[](https://vent-about-cancer-react.herokuapp.com/)
 
 ## Technology
 
@@ -58,5 +58,3 @@ Venting-posts |
 |       ![Landing-Page](/readmeIMG/main.JPG)       |       ![Profile](/readmeIMG/profile.JPG)       |
 |                  Create-profile                  |                 Venting-posts                  |
 | ![Create-Profile](/readmeIMG/create-profile.JPG) | ![Venting-posts](/readmeIMG/venting-posts.JPG) |
-
-## Business Objects (Database Structure)
