@@ -7,9 +7,9 @@ const Copyright = () => {
     <div className='copyright footer-social-icons'>
       <ul className='social-icons'>
         <li className='footer-list'>
-          <a className='social-icon'>
+          <p className='social-icon'>
             Copyright {d.getFullYear()} Lourexel Zuniga
-          </a>
+          </p>
         </li>
         <li className='footer-list'>
           <a
