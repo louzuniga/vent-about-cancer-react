@@ -8,7 +8,7 @@
 
 ## Live App
 
-[](https://vent-about-cancer-react.herokuapp.com/)
+https://vent-about-cancer-react.herokuapp.com/
 
 ## Technology
 
