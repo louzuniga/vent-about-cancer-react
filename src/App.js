@@ -6,8 +6,10 @@ import Copyright from './components/Copyright';
 import Landing from './components/Landing';
 import Routes from './components/routing/Routes';
 
-// Combines react and redux together by using Provider
+// Redux - Provider connects/combines react and Redux together
+// the entire app with be enclosed/wrap within Provider so all of the components created can access the state
 import { Provider } from 'react-redux';
+
 import store from './store';
 import { userAuth } from './actions/auth';
 import storeAuthToken from './utils/storeAuthToken';

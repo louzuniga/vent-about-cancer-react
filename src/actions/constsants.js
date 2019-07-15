@@ -1,4 +1,4 @@
-//hold all of the variables
+//hold all of the variables for Redux reducers so it can be changed is needed
 
 export const SET_ALERT = 'SET_ALERT';
 export const REMOVE_ALERT = 'REMOVE_ALERT';

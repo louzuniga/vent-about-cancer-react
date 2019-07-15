@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-// need connect to work with redux
+// connect - cconnects components to Redux
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { setAlert } from '../../actions/alert';
